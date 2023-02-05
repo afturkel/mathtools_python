@@ -1,4 +1,31 @@
-from functions import *
+import numpy as np
 
-input("Hello, welcome to Math Tools! How can I help you? \nWrite '1' for basic math operations: \n")
+def operationinput(numinp):
+    result = []
+    nums = ["1","2","3","4","5","6","7","8","9","0"]
+    x = ""
+    for i in numinp:
+        if i in nums:
+            x += i
+        else:
+            result.append(list(x))
+            x = ""
+    result.append(list(x))
+    #new_list = [list(map(int, lst)) for lst in result]
+    print(result)
+
+    #res = [eval(i) for i in result]
+    #print(res)
+def addition():
+    lst = "".join([i if i in [str(e) for e in range(11)]else " " for i in input()]).split(" ")
+    print(lst)
+    res = [eval(i) for i in lst]
+    print(sum(res))
+
+def division():
+    lst = "".join([i if i in [str(e) for e in range(11)]else " " for i in input()]).split(" ")
+    res = [eval(i) for i in lst]
+    print(sum(res))
+
 operationinput(input())
+
