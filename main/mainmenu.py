@@ -1,8 +1,4 @@
-import numpy as np
+from functions import *
 
-def addition():
-    lst = "".join([i if i in [str(e) for e in range(11)]else " " for i in input()]).split(" ")
-    res = [eval(i) for i in lst]
-    print(sum(res))
-
-addition()
+input("Hello, welcome to Math Tools! How can I help you? \nWrite '1' for basic math operations: \n")
+operationinput(input())
