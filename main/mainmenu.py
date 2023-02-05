@@ -29,3 +29,7 @@ def division():
 
 operationinput(input())
 
+"""
+o sublistlerdeki rakamlari birlestirip birbiriyle operasyon et
+bunlari fonksiyonlara ayirip fazla kod kullanmaktan kaçin
+"""
