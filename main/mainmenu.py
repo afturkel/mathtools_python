@@ -11,11 +11,9 @@ def operationinput(numinp):
             result.append(list(x))
             x = ""
     result.append(list(x))
-    #new_list = [list(map(int, lst)) for lst in result]
-    print(result)
-
-    #res = [eval(i) for i in result]
-    #print(res)
+    concat_res = [''.join(sub_list) for sub_list in result]
+    int_res = [int(i) if i.isdigit() else i for i in concat_res]
+    
 def addition():
     lst = "".join([i if i in [str(e) for e in range(11)]else " " for i in input()]).split(" ")
     print(lst)
