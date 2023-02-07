@@ -1,6 +1,6 @@
 import numpy as np
 
-def operationinput(numinp):
+def b_operation_process(numinp):
     result = []
     nums = ["1","2","3","4","5","6","7","8","9","0"]
     x = ""
@@ -12,18 +12,11 @@ def operationinput(numinp):
             x = ""
     result.append(list(x))
     concat_res = [''.join(sub_list) for sub_list in result]
-    int_res = [int(i) if i.isdigit() else i for i in concat_res]
+    b_operation_process.var = [int(i) if i.isdigit() else i for i in concat_res]
     
-def addition():
-    lst = "".join([i if i in [str(e) for e in range(11)]else " " for i in input()]).split(" ")
-    print(lst)
-    res = [eval(i) for i in lst]
-    print(sum(res))
+def addition(numinp):
+    b_operation_process(numinp)
+    print(sum(b_operation_process.var))
 
-def division():
-    lst = "".join([i if i in [str(e) for e in range(11)]else " " for i in input()]).split(" ")
-    res = [eval(i) for i in lst]
-    print(sum(res))
 
-operationinput(input())
-
+addition(input())
