@@ -1,6 +1,6 @@
 import numpy as np
 
-def operationinput(numinp):
+def b_operation_process(numinp):
     result = []
     nums = ["1","2","3","4","5","6","7","8","9","0"]
     x = ""
@@ -11,25 +11,16 @@ def operationinput(numinp):
             result.append(list(x))
             x = ""
     result.append(list(x))
-    #new_list = [list(map(int, lst)) for lst in result]
-    print(result)
+    concat_res = [''.join(sub_list) for sub_list in result]
+    b_operation_process.var = [int(i) if i.isdigit() else i for i in concat_res]
+    
+def addition(numinp):
+    b_operation_process(numinp)
+    print(sum(b_operation_process.var))
 
-    #res = [eval(i) for i in result]
-    #print(res)
-def addition():
-    lst = "".join([i if i in [str(e) for e in range(11)]else " " for i in input()]).split(" ")
-    print(lst)
-    res = [eval(i) for i in lst]
-    print(sum(res))
+def subtraction(numinp):
+    b_operation_process(numinp)
+    print(np.subtract(b_operation_process.var))
 
-def division():
-    lst = "".join([i if i in [str(e) for e in range(11)]else " " for i in input()]).split(" ")
-    res = [eval(i) for i in lst]
-    print(sum(res))
 
-operationinput(input())
-
-"""
-o sublistlerdeki rakamlari birlestirip birbiriyle operasyon et
-bunlari fonksiyonlara ayirip fazla kod kullanmaktan kaçin
-"""
+subtraction(input())
