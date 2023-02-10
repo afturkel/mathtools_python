@@ -20,7 +20,11 @@ def addition(numinp):
 
 def subtraction(numinp):
     b_operation_process(numinp)
-    print(np.subtract(b_operation_process.var))
-
+    valor = b_operation_process.var[0]
+    del b_operation_process.var[0]
+    subres = valor-sum(b_operation_process.var)
+    print(subres)
+    
+    
 
 subtraction(input())
