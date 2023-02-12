@@ -1,33 +1,24 @@
-import numpy as np
+from basic_operations import *
+from before_operation_process import *
+import os
 
-def b_operation_process(numinp):
-    result = []
-    nums = ["1","2","3","4","5","6","7","8","9","0"]
-    x = ""
-    for i in numinp:
-        if i in nums:
-            x += i
-        else:
-            result.append(list(x))
-            x = ""
-    result.append(list(x))
-    concat_res = [''.join(sub_list) for sub_list in result]
-    b_operation_process.var = [int(i) if i.isdigit() else i for i in concat_res]
-    
-def addition(numinp):
-    b_operation_process(numinp)
-    print(sum(b_operation_process.var))
+clear = lambda: os.system('cls')
+sys_working = True
 
-def subtraction(numinp):
-    b_operation_process(numinp)
-    valor = b_operation_process.var[0]
-    del b_operation_process.var[0]
-    subres = valor-sum(b_operation_process.var)
-    print(subres)
-    
-def multiplication(numinp):
-    res = 1
-    b_operation_process(numinp)
-    for x in b_operation_process.var:
-        res = res * x
-    print(res)
+userwant = input("Hello, what do you want to do?\n1) Basic Math Operations\nFor example, write '1' for Basic Maths\n")
+
+#while sys_working:
+if userwant == "1":
+    userwan_op = input("\nWhich kind of operation?\n1)Addition\n2)Subtraction\n3)Multiplication\n4)Division(not available for now)\n\n")
+    if userwan_op == "1":
+        print("Write your operation (ex: 15+20+25)")
+        addition(input())
+    elif userwan_op == "2":
+        print("Write your operation (ex: 15-20-25)")
+        subtraction(input())
+    elif userwan_op == "3":
+        print("Write your operation (ex: 15*20*25)")
+        multiplication(input())
+    else:
+        clear()
+        print("Please select correctly.")
