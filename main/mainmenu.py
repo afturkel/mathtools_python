@@ -31,5 +31,3 @@ def multiplication(numinp):
     for x in b_operation_process.var:
         res = res * x
     print(res)
-
-multiplication(input())
